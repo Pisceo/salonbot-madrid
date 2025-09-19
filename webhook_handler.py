@@ -102,45 +102,22 @@ def format_response_for_platform(response, platform):
             'quick_replies': response.get('quick_replies', [])
         }
 
-@app.route('/webhook/whatsapp', methods=['POST'])
-def whatsapp_webhook():
-    """WhatsApp webhook endpoint"""
-    try:
-        data = request.get_json()
-        logger.info(f"WhatsApp webhook received: {data}")
-        
-        # Handle verification
-        if request.args.get('hub.verify_token') == os.getenv('WHATSAPP_VERIFY_TOKEN'):
-            return request.args.get('hub.challenge')
-        
-        # Process message
-        message_data = PlatformHandler.whatsapp_handler(data)
-        if message_data:
-            response = bot.process_message(
-                message_data['message'], 
-                message_data['user_id']
-            )
-            response['user_id'] = message_data['user_id']
-            
-            formatted_response = format_response_for_platform(response, 'whatsapp')
-            return jsonify(formatted_response)
-        
-        return jsonify({'status': 'ok'})
-    
-    except Exception as e:
-        logger.error(f"WhatsApp webhook error: {e}")
-        return jsonify({'error': 'Internal server error'}), 500
-
 @app.route('/webhook/instagram', methods=['GET', 'POST'])
 def instagram_webhook():
     """Instagram webhook endpoint"""
     try:
-        data = request.get_json()
-        logger.info(f"Instagram webhook received: {data}")
-        
         # Handle verification
-        if request.args.get('hub.verify_token') == os.getenv('INSTAGRAM_VERIFY_TOKEN'):
-            return request.args.get('hub.challenge')
+        if request.method == 'GET':
+            verify_token = request.args.get('hub.verify_token')
+            challenge = request.args.get('hub.challenge')
+            if verify_token == os.getenv('INSTAGRAM_VERIFY_TOKEN', 'salonbot_madrid_2024'):
+                return challenge
+            else:
+                return 'Verification failed', 403
+        
+        # Handle messages
+        data = request.get_json()
+        logger.info(f'Instagram webhook received: {data}')
         
         # Process message
         message_data = PlatformHandler.instagram_handler(data)
@@ -157,7 +134,7 @@ def instagram_webhook():
         return jsonify({'status': 'ok'})
     
     except Exception as e:
-        logger.error(f"Instagram webhook error: {e}")
+        logger.error(f'Instagram webhook error: {e}')
         return jsonify({'error': 'Internal server error'}), 500
 
 @app.route('/webhook/web', methods=['POST'])
