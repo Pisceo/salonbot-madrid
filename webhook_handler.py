@@ -131,7 +131,7 @@ def whatsapp_webhook():
         logger.error(f"WhatsApp webhook error: {e}")
         return jsonify({'error': 'Internal server error'}), 500
 
-@app.route('/webhook/instagram', methods=['POST'])
+@app.route('/webhook/instagram', methods=['GET', 'POST'])
 def instagram_webhook():
     """Instagram webhook endpoint"""
     try:
