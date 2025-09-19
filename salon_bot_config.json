@@ -1,0 +1,324 @@
+{
+  "bot_name": "SalonBot Madrid",
+  "version": "1.0",
+  "language": "es",
+  "location": "Madrid, Spain",
+  "business_info": {
+    "name": "Salón Belleza Madrid",
+    "address": "Calle Gran Vía 123, 28013 Madrid",
+    "phone": "+34 600 123 456",
+    "whatsapp": "+34 600 123 456",
+    "instagram": "@salonbellezamadrid",
+    "email": "info@salonbellezamadrid.com",
+    "website": "www.salonbellezamadrid.com"
+  },
+  "working_hours": {
+    "monday": "09:00 - 20:00",
+    "tuesday": "09:00 - 20:00", 
+    "wednesday": "09:00 - 20:00",
+    "thursday": "09:00 - 20:00",
+    "friday": "09:00 - 21:00",
+    "saturday": "09:00 - 19:00",
+    "sunday": "Cerrado"
+  },
+  "services": [
+    {
+      "name": "Corte de cabello",
+      "duration": "45 min",
+      "price": "25€",
+      "description": "Corte profesional adaptado a tu estilo y tipo de cabello",
+      "category": "cabello"
+    },
+    {
+      "name": "Manicura",
+      "duration": "45 min", 
+      "price": "15€",
+      "description": "Manicura completa con limpieza, corte y esmaltado",
+      "category": "uñas"
+    },
+    {
+      "name": "Pedicura",
+      "duration": "60 min",
+      "price": "20€", 
+      "description": "Pedicura completa con exfoliación y esmaltado",
+      "category": "uñas"
+    },
+    {
+      "name": "Coloración de cabello",
+      "duration": "90 min",
+      "price": "50€",
+      "description": "Coloración profesional con productos de alta calidad",
+      "category": "cabello"
+    },
+    {
+      "name": "Tratamiento facial",
+      "duration": "60 min",
+      "price": "35€",
+      "description": "Tratamiento facial completo para rejuvenecer tu piel",
+      "category": "facial"
+    },
+    {
+      "name": "Masaje",
+      "duration": "60 min", 
+      "price": "40€",
+      "description": "Masaje relajante para aliviar tensiones",
+      "category": "bienestar"
+    }
+  ],
+  "greeting": {
+    "message": "¡Hola! 👋 Bienvenido/a a Salón Belleza Madrid. Soy tu asistente virtual y estoy aquí para ayudarte con información sobre nuestros servicios, horarios, precios y reservas. ¿En qué puedo ayudarte hoy?",
+    "quick_replies": [
+      "💇‍♀️ Servicios y Precios",
+      "🕒 Horarios",
+      "📍 Ubicación y Reservas", 
+      "❓ Preguntas Frecuentes",
+      "🎉 Promociones",
+      "📞 Contacto"
+    ]
+  },
+  "intents": {
+    "greeting": {
+      "patterns": [
+        "hola", "buenos días", "buenas tardes", "buenas noches", "hey", "hi", "hello", "saludos", "qué tal"
+      ],
+      "response": "¡Hola! 👋 Bienvenido/a a Salón Belleza Madrid. ¿En qué puedo ayudarte hoy?",
+      "quick_replies": [
+        "💇‍♀️ Servicios y Precios",
+        "🕒 Horarios", 
+        "📍 Ubicación y Reservas",
+        "❓ Preguntas Frecuentes"
+      ]
+    },
+    "services_prices": {
+      "patterns": [
+        "servicios", "precios", "tarifas", "qué servicios", "cuánto cuesta", "precio", "servicio", "corte", "manicura", "pedicura", "coloración", "tratamiento", "masaje"
+      ],
+      "response": "💇‍♀️ *Nuestros Servicios y Precios:*\n\n*CABELLO:*\n• Corte de cabello - 45 min - 25€\n• Coloración de cabello - 90 min - 50€\n\n*UÑAS:*\n• Manicura - 45 min - 15€\n• Pedicura - 60 min - 20€\n\n*BELLEZA:*\n• Tratamiento facial - 60 min - 35€\n• Masaje - 60 min - 40€\n\n¿Te interesa algún servicio en particular?",
+      "quick_replies": [
+        "💇‍♀️ Más info Cabello",
+        "💅 Más info Uñas", 
+        "✨ Más info Belleza",
+        "📅 Reservar Cita",
+        "🏠 Menú Principal"
+      ]
+    },
+    "working_hours": {
+      "patterns": [
+        "horarios", "horario", "cuándo abren", "cuándo cierran", "qué días", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo", "abierto", "cerrado"
+      ],
+      "response": "🕒 *Nuestros Horarios:*\n\n*Lunes a Jueves:* 09:00 - 20:00\n*Viernes:* 09:00 - 21:00\n*Sábado:* 09:00 - 19:00\n*Domingo:* Cerrado\n\n¿Necesitas reservar una cita?",
+      "quick_replies": [
+        "📅 Reservar Cita",
+        "📍 Ubicación",
+        "📞 Contacto",
+        "🏠 Menú Principal"
+      ]
+    },
+    "location": {
+      "patterns": [
+        "ubicación", "dirección", "dónde están", "cómo llegar", "dirección", "calle", "gran vía", "madrid", "metro", "transporte"
+      ],
+      "response": "📍 *Nuestra Ubicación:*\n\n🏢 *Salón Belleza Madrid*\nCalle Gran Vía 123, 28013 Madrid\n\n🚇 *Metro más cercano:*\n• Gran Vía (Líneas 1 y 5)\n• Callao (Líneas 3 y 5)\n\n🚌 *Autobuses:*\nLíneas 1, 2, 44, 46, 74, 75, 133, 146, 147\n\n¿Necesitas ayuda para llegar o quieres reservar una cita?",
+      "quick_replies": [
+        "📅 Reservar Cita",
+        "📞 Llamar",
+        "💬 WhatsApp",
+        "🏠 Menú Principal"
+      ]
+    },
+    "booking": {
+      "patterns": [
+        "reservar", "cita", "appointment", "booking", "agendar", "cuándo puedo", "disponibilidad", "libre", "hora"
+      ],
+      "response": "📅 *¡Perfecto! Te ayudo con tu reserva.*\n\nPara agendar tu cita, puedes contactarnos de estas formas:\n\n📱 *WhatsApp:* +34 600 123 456\n📞 *Teléfono:* +34 600 123 456\n💬 *Instagram:* @salonbellezamadrid\n🌐 *Web:* www.salonbellezamadrid.com\n\n*Horarios disponibles:*\nLunes-Jueves: 09:00-20:00\nViernes: 09:00-21:00\nSábado: 09:00-19:00\n\n¿Qué servicio te interesa?",
+      "quick_replies": [
+        "💇‍♀️ Ver Servicios",
+        "📱 Contactar WhatsApp",
+        "💬 Instagram DM",
+        "🏠 Menú Principal"
+      ]
+    },
+    "contact": {
+      "patterns": [
+        "contacto", "contactar", "teléfono", "whatsapp", "instagram", "email", "correo", "llamar", "escribir"
+      ],
+      "response": "📞 *Formas de Contacto:*\n\n📱 *WhatsApp:* +34 600 123 456\n📞 *Teléfono:* +34 600 123 456\n💬 *Instagram:* @salonbellezamadrid\n📧 *Email:* info@salonbellezamadrid.com\n🌐 *Web:* www.salonbellezamadrid.com\n\n*Horarios de atención:*\nLunes-Sábado: 09:00-20:00\n\n¿En qué podemos ayudarte?",
+      "quick_replies": [
+        "📅 Reservar Cita",
+        "💇‍♀️ Servicios",
+        "📍 Ubicación",
+        "🏠 Menú Principal"
+      ]
+    },
+    "faq": {
+      "patterns": [
+        "preguntas", "faq", "dudas", "ayuda", "información", "saber más", "cómo funciona", "qué necesito"
+      ],
+      "response": "❓ *Preguntas Frecuentes:*\n\n*¿Aceptan tarjetas?* 💳\nSí, aceptamos efectivo, tarjeta y Bizum.\n\n*¿Necesito reserva?* 📅\nRecomendamos reservar, pero también atendemos sin cita según disponibilidad.\n\n*¿Atienden hombres y mujeres?* 👥\n¡Por supuesto! Atendemos a todos los géneros.\n\n*¿Hablan inglés?* 🇬🇧\nSí, nuestro equipo habla español e inglés.\n\n*¿Venden productos?* 🛍️\nSí, tenemos productos profesionales para el cuidado del cabello y la piel.\n\n¿Tienes alguna otra pregunta?",
+      "quick_replies": [
+        "💇‍♀️ Servicios",
+        "📅 Reservar",
+        "📍 Ubicación",
+        "🏠 Menú Principal"
+      ]
+    },
+    "promotions": {
+      "patterns": [
+        "promociones", "ofertas", "descuentos", "especial", "pack", "combo", "rebaja", "precio especial"
+      ],
+      "response": "🎉 *¡Promociones Especiales!*\n\n*PACK BELLEZA COMPLETO* 💎\n• Corte + Coloración + Tratamiento facial\n• *Precio especial: 95€* (Ahorra 15€)\n\n*PACK RELAX* 🧘‍♀️\n• Manicura + Pedicura + Masaje\n• *Precio especial: 65€* (Ahorra 10€)\n\n*PROMO PRIMERA VEZ* ✨\n• 20% descuento en tu primer servicio\n• Válido para nuevos clientes\n\n*Válido hasta fin de mes*\n\n¿Te interesa alguna promoción?",
+      "quick_replies": [
+        "📅 Reservar Promo",
+        "💇‍♀️ Ver Servicios",
+        "📞 Más Info",
+        "🏠 Menú Principal"
+      ]
+    },
+    "payment": {
+      "patterns": [
+        "pago", "pagar", "tarjeta", "efectivo", "bizum", "formas de pago", "cómo pagar", "aceptan"
+      ],
+      "response": "💳 *Formas de Pago:*\n\n✅ *Efectivo*\n✅ *Tarjeta de débito/crédito*\n✅ *Bizum*\n✅ *Transferencia bancaria*\n\n*No cobramos comisiones adicionales*\n\n¿Necesitas más información sobre algún servicio?",
+      "quick_replies": [
+        "💇‍♀️ Servicios",
+        "📅 Reservar",
+        "📍 Ubicación",
+        "🏠 Menú Principal"
+      ]
+    },
+    "cancellation": {
+      "patterns": [
+        "cancelar", "cancelación", "anular", "no puedo ir", "cambiar cita", "reagendar"
+      ],
+      "response": "📅 *Política de Cancelaciones:*\n\n*Cancelación gratuita:*\n• Con más de 24h de antelación\n\n*Cancelación con cargo:*\n• Menos de 24h: 50% del servicio\n• No presentarse: 100% del servicio\n\n*Para cancelar o reagendar:*\n📱 WhatsApp: +34 600 123 456\n📞 Teléfono: +34 600 123 456\n\n¿Necesitas cancelar o cambiar tu cita?",
+      "quick_replies": [
+        "📱 Contactar WhatsApp",
+        "📞 Llamar",
+        "🏠 Menú Principal"
+      ]
+    },
+    "products": {
+      "patterns": [
+        "productos", "venden", "comprar", "champú", "crema", "tratamiento", "productos para el cabello", "cosméticos"
+      ],
+      "response": "🛍️ *Productos Profesionales:*\n\n*CABELLO:*\n• Champús y acondicionadores\n• Tratamientos reparadores\n• Productos de coloración\n• Herramientas profesionales\n\n*PIEL:*\n• Cremas faciales\n• Exfoliantes\n• Mascarillas\n• Protectores solares\n\n*UÑAS:*\n• Esmaltes de gel\n• Tratamientos fortalecedores\n• Accesorios de manicura\n\n*Consulta disponibilidad y precios en el salón*\n\n¿Te interesa algún producto específico?",
+      "quick_replies": [
+        "💇‍♀️ Servicios",
+        "📅 Reservar",
+        "📍 Ubicación",
+        "🏠 Menú Principal"
+      ]
+    },
+    "gender_services": {
+      "patterns": [
+        "hombres", "mujeres", "servicios para hombres", "servicios para mujeres", "corte masculino", "corte femenino", "unisex"
+      ],
+      "response": "👥 *Servicios para Todos:*\n\n*SERVICIOS UNISEX:*\n• Corte de cabello (hombres y mujeres)\n• Coloración\n• Tratamientos capilares\n• Manicura y pedicura\n• Tratamientos faciales\n• Masajes\n\n*Nuestro equipo está especializado en:*\n• Cortes modernos y clásicos\n• Técnicas de coloración avanzadas\n• Tratamientos personalizados\n\n*¡Atendemos a todos los géneros con la misma calidad!*\n\n¿Qué servicio te interesa?",
+      "quick_replies": [
+        "💇‍♀️ Ver Servicios",
+        "📅 Reservar",
+        "📍 Ubicación",
+        "🏠 Menú Principal"
+      ]
+    },
+    "duration": {
+      "patterns": [
+        "duración", "cuánto tiempo", "cuánto dura", "minutos", "horas", "tiempo"
+      ],
+      "response": "⏱️ *Duración de Servicios:*\n\n*CABELLO:*\n• Corte: 45 minutos\n• Coloración: 90 minutos\n\n*UÑAS:*\n• Manicura: 45 minutos\n• Pedicura: 60 minutos\n\n*BELLEZA:*\n• Tratamiento facial: 60 minutos\n• Masaje: 60 minutos\n\n*Los tiempos son aproximados y pueden variar según el servicio específico*\n\n¿Te gustaría reservar algún servicio?",
+      "quick_replies": [
+        "💇‍♀️ Ver Servicios",
+        "📅 Reservar",
+        "📍 Ubicación",
+        "🏠 Menú Principal"
+      ]
+    },
+    "languages": {
+      "patterns": [
+        "idiomas", "inglés", "español", "francés", "alemán", "hablan", "lengua", "idioma"
+      ],
+      "response": "🗣️ *Idiomas Disponibles:*\n\n*Nuestro equipo habla:*\n• 🇪🇸 Español (nativo)\n• 🇬🇧 Inglés\n• 🇫🇷 Francés (básico)\n\n*¡No dudes en comunicarte en tu idioma preferido!*\n\n¿En qué idioma prefieres que te atienda?",
+      "quick_replies": [
+        "💇‍♀️ Servicios",
+        "📅 Reservar",
+        "📍 Ubicación",
+        "🏠 Menú Principal"
+      ]
+    }
+  },
+  "fallback_responses": [
+    "Lo siento, no he entendido tu mensaje. ¿Podrías ser más específico? 😊",
+    "No estoy seguro de lo que necesitas. ¿Te ayudo con información sobre nuestros servicios? 💇‍♀️",
+    "Perdón, no tengo esa información. ¿Quieres que te ayude con horarios, servicios o reservas? 📅",
+    "No he podido procesar tu consulta. ¿Te muestro nuestro menú principal? 🏠"
+  ],
+  "conversation_flows": {
+    "service_details": {
+      "cabello": {
+        "response": "💇‍♀️ *Servicios de Cabello:*\n\n*Corte de cabello - 25€*\n• Duración: 45 minutos\n• Incluye: lavado, corte y secado\n• Adaptado a tu tipo de cabello y estilo\n\n*Coloración de cabello - 50€*\n• Duración: 90 minutos\n• Incluye: coloración, lavado y secado\n• Productos de alta calidad\n\n¿Te interesa reservar alguno?",
+        "quick_replies": [
+          "📅 Reservar Corte",
+          "📅 Reservar Coloración",
+          "📞 Más Info",
+          "🏠 Menú Principal"
+        ]
+      },
+      "uñas": {
+        "response": "💅 *Servicios de Uñas:*\n\n*Manicura - 15€*\n• Duración: 45 minutos\n• Incluye: limpieza, corte, limado y esmaltado\n\n*Pedicura - 20€*\n• Duración: 60 minutos\n• Incluye: exfoliación, limpieza, corte y esmaltado\n\n¿Te interesa reservar alguno?",
+        "quick_replies": [
+          "📅 Reservar Manicura",
+          "📅 Reservar Pedicura",
+          "📞 Más Info",
+          "🏠 Menú Principal"
+        ]
+      },
+      "belleza": {
+        "response": "✨ *Servicios de Belleza:*\n\n*Tratamiento facial - 35€*\n• Duración: 60 minutos\n• Incluye: limpieza, exfoliación, mascarilla y hidratación\n\n*Masaje - 40€*\n• Duración: 60 minutos\n• Incluye: masaje relajante completo\n\n¿Te interesa reservar alguno?",
+        "quick_replies": [
+          "📅 Reservar Facial",
+          "📅 Reservar Masaje",
+          "📞 Más Info",
+          "🏠 Menú Principal"
+        ]
+      }
+    }
+  },
+  "quick_reply_templates": {
+    "main_menu": [
+      "💇‍♀️ Servicios y Precios",
+      "🕒 Horarios",
+      "📍 Ubicación y Reservas",
+      "❓ Preguntas Frecuentes",
+      "🎉 Promociones",
+      "📞 Contacto"
+    ],
+    "booking_menu": [
+      "📅 Reservar Cita",
+      "📱 WhatsApp",
+      "💬 Instagram DM",
+      "🌐 Web",
+      "🏠 Menú Principal"
+    ],
+    "service_menu": [
+      "💇‍♀️ Cabello",
+      "💅 Uñas",
+      "✨ Belleza",
+      "📅 Reservar",
+      "🏠 Menú Principal"
+    ]
+  },
+  "deployment_config": {
+    "platforms": ["whatsapp", "instagram", "web"],
+    "webhook_url": "https://your-domain.com/webhook",
+    "api_key": "your-api-key-here",
+    "supported_formats": ["text", "quick_replies", "buttons", "carousel"],
+    "max_message_length": 2000,
+    "response_delay": 1000
+  },
+  "analytics": {
+    "track_intents": true,
+    "track_conversions": true,
+    "track_user_sessions": true,
+    "export_data": true
+  }
+}
